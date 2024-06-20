@@ -51,7 +51,7 @@ const PopulationBarChart = React.memo((props) => {
       try {
         const deactiveRegionsStr = deactiveRegions.join(",");
         const response = await axios.get(
-          `http://localhost:3001/api/barchart?limit=12&sort=Population&sort_type=-1&filter=Year&filter_value=${yearRange}&disabled_regions=${deactiveRegionsStr}`
+          `http://192.168.100.53:3001/api/barchart?limit=12&sort=Population&sort_type=-1&filter=Year&filter_value=${yearRange}&disabled_regions=${deactiveRegionsStr}`
         );
         const data = response.data;
         if (!data || data.length === 0) {
